@@ -3,15 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { DepartmentsListComponent } from './departments-list/departments-list.component';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchBarComponent,
-    routingComponents
+    routingComponents,
+    HomePageComponent,
+    AboutPageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,

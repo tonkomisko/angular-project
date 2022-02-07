@@ -4,7 +4,7 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="./app.component.css" rel="stylesheet">
   </head>
   <body>
 
@@ -12,6 +12,15 @@
       Routing and navigation
     </h1>
     <!-- <app-search-bar></app-search-bar> -->
+
+    <nav>
+      <ul class="container">
+        <li><a routerLink = "/home" routerLinkActive = "active">Home</a></li>
+        <li ><a routerLink = "/about" routerLinkActive = "active">About </a> </li>
+        <li><a routerLink = "/contact" routerLinkActive = "active">Contact</a></li>
+      </ul><!-- .container -->
+    </nav>
+
     <router-outlet></router-outlet>
 
   

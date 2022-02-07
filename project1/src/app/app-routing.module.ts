@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {DepartmentsListComponent} from './departments-list/departments-list.component'
-import {EmployeeListComponent} from './employee-list/employee-list.component'
+import {HomePageComponent} from './home-page/home-page.component'
+import {AboutPageComponent} from './about-page/about-page.component'
+import {ContactPageComponent} from './contact-page/contact-page.component'
+
 
 const routes: Routes = [
-  { path: 'departments', component: DepartmentsListComponent},
-  { path: 'employees', component: EmployeeListComponent}
+  { path: 'home', component: HomePageComponent},
+  { path: 'about', component: AboutPageComponent},
+  { path: 'contact', component: ContactPageComponent}
 
 ];
 
@@ -14,4 +17,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [DepartmentsListComponent, EmployeeListComponent]
+export const routingComponents = [HomePageComponent, AboutPageComponent, ContactPageComponent]

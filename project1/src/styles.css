@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files
 html, body, #main {
     font-size: 16px;
     width: 100%;
@@ -116,10 +116,10 @@ html, body, #main {
    
       
     }
+     */
     
-    
-    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    /* .navbar-default .navbar-nav .open .dropdown-menu>li>a {
       color: #e14444;
-  }
-  }
+  } */
+  /* } */
   
