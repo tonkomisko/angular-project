@@ -4,12 +4,14 @@ import {HomePageComponent} from './home-page/home-page.component'
 import {AboutPageComponent} from './about-page/about-page.component'
 import {ContactComponent} from './contact/contact.component'
 import {RecordsComponent} from './records/records.component'
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
   {path: 'home', component: HomePageComponent},
   {path: 'aboutus', component:AboutPageComponent},
   {path: 'contact', component:ContactComponent},
   {path: 'records', component:RecordsComponent},
+  {path: 'blog', component: BlogComponent}
 ];
 
 @NgModule({
@@ -17,4 +19,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomePageComponent, AboutPageComponent, ContactComponent, RecordsComponent]
+export const routingComponents = [HomePageComponent, AboutPageComponent, ContactComponent, RecordsComponent, BlogComponent]

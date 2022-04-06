@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-contact',
   template: `
   <h3 > This is the CONTACT page </h3>  
-  <p class = "home">
+  <p class = "contact">
   
   Biscuit toffee sugar plum wafer caramels marzipan biscuit marshmallow. Dessert candy canes muffin gummi bears apple pie chupa chups pudding soufflé. 
   Chocolate bar sweet gummies ice cream ice cream chocolate cake. Bear claw pudding cotton candy dessert marzipan fruitcake dragée cheesecake.
@@ -24,7 +24,7 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: [
     `
-    h3, .home {
+    h3, .contact {
       width: 50%;
       margin: 0 auto;
       padding: 2rem;

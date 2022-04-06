@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Blog site</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="/blog.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <div class="blog-content">
+            
+                <h1>This is the BLOG</h1>
+            
+                <h3> 
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Delectus, nam.
+                </h3>
+
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad facere reiciendis totam magnam a. Cumque ipsum accusamus
+                deleniti. Dicta, voluptates quos eum sapiente dolorem quas saepe cumque incidunt beatae dignissimos enim impedit quis,
+                consectetur accusantium similique laboriosam quo quibusdam. Autem fuga veritatis harum omnis cum voluptate velit
+                asperiores repudiandae excepturi magnam officia mollitia quis, corrupti expedita voluptatem, sunt odio consectetur
+                facilis error placeat. Eligendi laborum qui culpa commodi maxime est? Facilis odio quod vel aliquam voluptates beatae,
+                dolorum dolorem nihil iste voluptate totam velit unde veritatis similique quam cum earum explicabo facere nam laudantium
+                harum possimus consectetur amet? Perspiciatis, ad.
+                </p>
+                <br>
+                    <br>
+                
+                    <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad facere reiciendis totam magnam a. Cumque ipsum accusamus
+                deleniti. Dicta, voluptates quos eum sapiente dolorem quas saepe cumque incidunt beatae dignissimos enim impedit quis,
+                consectetur accusantium similique laboriosam quo quibusdam. Autem fuga veritatis harum omnis cum voluptate velit
+                asperiores repudiandae excepturi magnam officia mollitia quis, corrupti expedita voluptatem, sunt odio consectetur
+                facilis error placeat. Eligendi laborum qui culpa commodi maxime est? Facilis odio quod vel aliquam voluptates beatae,
+                dolorum dolorem nihil iste voluptate totam velit unde veritatis similique quam cum earum explicabo facere nam laudantium
+                harum possimus consectetur amet? Perspiciatis, ad.
+                </p>
+                <br>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad facere reiciendis totam magnam a. Cumque ipsum accusamus
+                deleniti. Dicta, voluptates quos eum sapiente dolorem quas saepe cumque incidunt beatae dignissimos enim impedit quis,
+                consectetur accusantium similique laboriosam quo quibusdam. Autem fuga veritatis harum omnis cum voluptate velit
+                asperiores repudiandae excepturi magnam officia mollitia quis, corrupti expedita voluptatem, sunt odio consectetur
+                facilis error placeat. Eligendi laborum qui culpa commodi maxime est? Facilis odio quod vel aliquam voluptates beatae,
+                dolorum dolorem nihil iste voluptate totam velit unde veritatis similique quam cum earum explicabo facere nam laudantium
+                harum possimus consectetur amet? Perspiciatis, ad.
+                </p> 
+                <p>
+
+                Please leave a comment below
+            </p>
+        </div>
+
+<!-- maybe change the textarea to input if it doesn't work -->
+
+        <div class="comment-form">
+            <form>
+            
+            <!-- <textarea name = "inputComment" [(ngModel)] = "inputComment" placeholder = "Your comment here..." name="" id="inputComment" cols="20" rows="5"></textarea> -->
+                <input type="text" [(ngModel)]="inputComment" id="inputComment" placeholder="Your comment here..."
+                    name="inputComment">
+              
+                <br>
+                <br>
+            
+                <button class="btn-primary" (click)="addComment()">
+                    Add a comment
+                </button>
+            
+            </form>
+        </div>
+
+        <div  *ngFor="let comment of commentsData; let i=index;"class="comments">
+            <ul class="comments_list">
+                <li>
+                    <header>This the header of the comment number {{i + 1}}. Posted on {{comment.dateTime}}</header>
+                    <article>{{comment.content}}</article>
+                    <footer>{{comment.author}}</footer>
+                </li>
+                               
+            </ul>
+        </div>
+
+    </body>
+</html>
