@@ -72,12 +72,25 @@
             </form>
         </div>
 
-        <div  *ngFor="let comment of commentsData; let i=index;"class="comments">
-            <ul class="comments_list">
+        <div  class="comments">
+            <ul class="comments_list" *ngFor="let comment of commentsData; let i=index;">
                 <li>
-                    <header>This the header of the comment number {{i + 1}}. Posted on {{comment.dateTime}}</header>
-                    <article>{{comment.content}}</article>
+                    <header>This the header of the comment number {{i+1}}. Posted on {{comment.dateTime}}</header>
+                    <article class ="li-comment transparent" contenteditable="false">{{comment.content}}</article>
+                    <!-- <input type="text" placeholder = {{comment.content}}> -->
                     <footer>{{comment.author}}</footer>
+                    <button class="btn btn-danger" (click) = "deleteComment(i)">
+                        <i class="fas fa-regular fa-trash"></i>
+                        Delete</button>
+                    <button class="update-button btn btn-info"  (click) = "updateComment(i)">
+                        <i class="fas fa-pencil"></i>
+                        Update
+                    </button>
+
+                    <button class="save-button btn btn-info hidden"  (click) = "saveComment(i)">
+                        <i class='fa fa-save'></i>
+                        Save
+                    </button>
                 </li>
                                
             </ul>

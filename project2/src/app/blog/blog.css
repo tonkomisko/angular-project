@@ -23,7 +23,25 @@
   text-align: justify;
 }
 
+.background-blue {
+    background-color: blue;
+}
 
+button.save-button.btn.btn-info.hidden {
+    display: none;
+}
+
+button .save-button.btn.btn-info.shown {
+    display: inline;
+}
+
+button.update-button.btn.btn-info.hidden {
+    display: none;
+}
+
+button .update-button.btn.btn-info.shown {
+    display: inline;
+}
 
 h3 {
     font-size: 1.5rem;
@@ -63,4 +81,8 @@ input {
     width: 50vw;
     height: 5rem;
     margin: 2rem auto;
+}
+
+li button {
+    margin: 1rem;
 }
