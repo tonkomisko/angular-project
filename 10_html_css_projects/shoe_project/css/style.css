@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: 'Sintony', sans-serif;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: rgb(202, 2, 28);
+    transition: background-color 0.4s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+    font-style: italic;
+    margin-top: 0rem;
+}
+
+.hamburger {
+    cursor: pointer;
+    color: white;
+    position: fixed;
+    top: 1rem;
+    font-size: 2rem;
+    left: 1rem;
+    text-shadow: 1px 1px 6px rgb(143, 143, 143);
+}
+
+.phone {
+    cursor: pointer;
+    color: white;
+    position: fixed;
+    top: 1rem;
+    font-size: 2rem;
+    right: 1rem;
+    text-shadow: 1px 1px 6px rgb(143, 143, 143);
+}
+
+header h1{
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    margin-top: 2rem;
+    text-shadow: 1px 1px 6px rgb(143, 143, 143);
+}
+
+header p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0;
+    /* font-weight: bold; */
+    color: rgb(88, 0, 0);
+    font-style: italic;
+    
+
+}
+
+.center-header i {
+    font-size: 4rem;
+    color: white;
+    display: block;
+    text-align: center;
+    /* max-width: 100%; */
+    margin: 1rem auto 0 auto;
+    text-shadow: 1px 1px 6px rgb(143, 143, 143);
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100vw;
+    position: relative;
+    height: 60vh;
+    margin-top: 10rem;
+}
+
+.carousel {
+    /* background-color: purple; */
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(0);
+    transition: transform 0.4s ease-in-out;
+    /* width: 500px; */
+    /* margin: 0 auto; */
+}
+
+.slide {
+    /* position: absolute; */
+    text-align: center;
+    /* height: 100v; */
+/* background-color: purple; */
+    width: 100vw;
+    
+}
+
+.slide h1 {
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+    margin-top: -2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 6px rgb(194, 190, 190);
+}
+
+.slide img {
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.carousel img {
+    max-width: 100%;
+}
+
+
+.slide a {
+    padding: 1rem 2rem; 
+    background: rgb(46, 46, 46);
+}
+
+.arrow {
+    background-color: transparent;
+    position: absolute;
+    top: 30%;
+    font-size: 5rem;
+    color: black;
+    opacity: 0.5;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+
+}
+
+.arrow:hover {
+    opacity: 0.8;
+}
+
+.left-arrow {
+    left: 2rem;
+}
+
+.right-arrow {
+    right: 2rem;
+}
+

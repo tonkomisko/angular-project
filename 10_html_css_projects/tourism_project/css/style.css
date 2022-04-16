@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: 'Sintony', sans-serif;
+    /* border: 1px solid salmon; */
+}
+
+html {
+    font-size: 100%;
+}
+
+
+body {
+    background-image: url(../bg.png);
+    background-position: center center;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    min-height: 100vh;
+    display: flex;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    width:25vw;
+    justify-content: space-around;
+    background: black;
+}
+
+
+ul li {
+    font-family: 'Prata', serif;
+    font-size: 1.2rem;
+    display: flex;
+    /* width: 150%; */
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 3rem;
+    /* display: block; */
+    color: aliceblue;
+}
+
+
+ul li:hover{
+    opacity: 0.8;
+    /* font-style: italic; */
+    border-bottom: 1px solid aliceblue;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    margin: 1rem auto;
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    background-color: goldenrod;
+    width: 60%;
+    color: black;
+
+}
+
+a:hover {
+    background-color: gold;
+}
+
+
+.aside-ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    font-family: 'Prata', serif;
+    color: aliceblue;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+main h1 {
+    font-family: 'Prata', serif;
+    color: aliceblue;
+    font-size: 4rem;
+    margin: 2rem;
+
+}
+
+h1 span {
+    font-size: 4rem;
+    color: goldenrod;
+    font-family: 'Prata', serif;
+}
+
+.logo {
+    color: #fff;
+    font-size: 4rem;
+    margin: 2rem;
+    display: flex;
+   
+    align-items: flex-end;
+    justify-content: flex-start;
+  
+}
+
+.logo>i:nth-of-type(2){
+    font-size: 2rem;
+
+}
+.logo>i:nth-of-type(3){
+    font-size: 1.5rem;
+
+}
+
+main h3 {
+    font-family: 'Prata', serif;
+    color: goldenrod;
+    font-size: 2rem;
+    margin: 2rem;
+    
+}
+
+.selected {
+    background-color: #fff;
+    padding: 1rem;
+    color: gold;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgb(197, 195, 195);
+    transition: background-color 0.4s ease-in-out;
+    border-radius: 3px;
+}
+
+
+@media screen and (max-width: 768px) {
+  body {
+      /* display: flex; */
+      flex-direction: column-reverse;
+      background-position: 50%;
+  }
+
+  main {
+      height: 70vh;
+
+
+  }
+
+  .logo{
+      margin-top: -2rem;
+  }
+
+
+  aside {
+      height: 20vh;
+      width: 100%;
+      padding-top: 1rem;
+  }
+  .aside-ul ul{
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      /* margin: 0.5rem; */
+  }
+
+  aside ul {
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      /* align-content: center; */
+  }
+
+  aside ul li {
+      margin: 1rem;
+      align-items: center;
+      /* justify-content: center; */
+      /* text-align: center; */
+  }
+
+    a.special {
+        display: none;
+    }
+
+}

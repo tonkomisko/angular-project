@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: 'Sintony', sans-serif;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-image: url(../bg.png);
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center center;
+
+
+}
+
+
+.container-fluid {
+
+    width: 1000px;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 100%;
+
+
+}
+
+.main-nav {
+    padding: 1rem 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+.pre-nav {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.logo {
+
+    color: rgb(15, 93, 156);
+    font-weight: bold;
+    font-size: 3rem;
+
+}
+
+.main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+}
+ 
+.main-nav li a {
+    background-color: rgb(21, 139, 168);
+    padding: 1rem 2rem;
+    text-align: center;
+    display: block;
+    color: aliceblue;
+
+}
+
+.main-nav li {
+    flex: 1;
+}
+
+.main-nav a.active {
+    background-color: white;
+    color: rgb(21, 139, 168);
+    font-weight: bold;
+}
+
+.main-nav a.highlight {
+    background-color: rgb(15, 93, 156);
+}
+
+.main-nav a:hover {
+    opacity: 0.8;
+}
+
+
+
+
+.content {
+font-size: 2rem;
+  margin-top: 10rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+}
+
+.content h1 {
+    background-color: rgb(15, 93, 156);
+    display: inline-block;
+    padding: 1rem;
+    color: white;
+}
+
+
+.content a {
+    font-size: 1.3rem;
+}
+
+.white-link {
+    background-color: white;
+    color: rgb(23, 114, 175);
+    padding: 1rem;
+
+}
+
+.teal-link {
+    background-color: rgb(23, 114, 175);
+    color: white;
+    padding: 1rem;
+    
+}
+
+.teal-link:hover {
+    opacity: 0.8;
+}
+
+.white-link:hover {
+    opacity: 0.8;
+}
+
+
+@media screen and (max-width: 768px) {
+    .pre-nav{
+        flex-direction: column;
+        justify-content: center;
+        font-weight: bold;
+        text-align: center;
+    }    
+
+    .main-nav ul {
+
+        flex-direction: column;
+    }
+
+
+    .content {
+        font-size: 1.3rem;
+    }
+}
