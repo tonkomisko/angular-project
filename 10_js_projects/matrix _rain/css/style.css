@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: 'Sintony', sans-serif;
+}
+
+html {
+    font-size: 100%;
+}
+
+
+body {
+    overflow: hidden;
+}
+
+
+#top-canvas {
+    position: absolute;
+    background: black;
+    width: 100%;
+    height: 50vh;
+    top:0;
+    left: 0;
+    /* margin: 0; */
+    /* overflow-y:scroll; */
+}
+
+/* h1{
+    color: rgb(41, 105, 161);
+    margin-top: 20rem;
+} */
