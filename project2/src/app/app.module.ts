@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,7 @@ import { RecordsComponent } from './records/records.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
 import { DatePipe } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 // import { Comment} from './blog/blog.component';
 // import { RecordsTable } from './records/records.component';
 @NgModule({
@@ -28,7 +29,9 @@ import { DatePipe } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
