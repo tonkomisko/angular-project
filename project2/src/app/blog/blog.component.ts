@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Comment } from './comment';
 // import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, map, Observable } from 'rxjs';
 import { BlogComments } from '../interface/blog-comments';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BlogService } from '../service/blog.service';
@@ -18,13 +18,12 @@ export class BlogComponent implements OnInit {
   inputComment: string = '';
   commentsData: any[] = JSON.parse(localStorage.getItem("comments") || "[]");
   blogComments: Observable<BlogComments[]>;
-  // [] = JSON.parse(localStorage.getItem("comments") || "[]");
+
 
   readonly ROOT_URL = environment.ROOT_URL;
   
 
 
-  // comment:string;
   setToStorage(){
     localStorage.setItem("comments", JSON.stringify(this.commentsData));
   }
@@ -34,7 +33,8 @@ export class BlogComponent implements OnInit {
   constructor(private http: HttpClient, public blogService: BlogService) {}
 
   ngOnInit(): void{
-    this.getComments();
+    // this.getComments();
+    this.showComments();
  
   }
 
@@ -57,17 +57,7 @@ export class BlogComponent implements OnInit {
     this.inputComment = '';
   }
 
-  // updateComment(index: number) {
-  //   // debugger;
-  //   // this.commentsData;
-  //   if(this.commentsData[index].status == 'read'){
-  //     this.commentsData[index].status = 'edit';
-  //   }else {
-  //     this.commentsData[index].status = 'read';
-  //   }
-  //   this.commentsData.splice(index,1,this.commentsData[index])
-  //   localStorage.setItem("comments", JSON.stringify(this.commentsData));
-  // }
+
  
 
   switchStatus(comment:any){
@@ -79,18 +69,34 @@ export class BlogComponent implements OnInit {
     }
   }
 
-  // deleteComment(index: number) {
-  //   confirm('Do you want to delete this comment?');
-  //   this.commentsData.splice(index, 1);
-  //   localStorage.setItem("comments", JSON.stringify(this.commentsData));
-  // }
+ 
 
   getComments() {
     // this.blogComments = this.http.get(this.ROOT_URL)
-    this.blogComments = this.http.get<BlogComments[]>(this.ROOT_URL)
+     return this.http.get<any>(`https://626fc2eff7d739495bdbd882.mockapi.io/api/comments/blog_comments`);
+    
+   
+    
+
    }
 
+newComments:any;
 
+showComments(){
+
+  
+      this.getComments()
+        .subscribe((data: any) =>  {
+
+          this.newComments = data;
+          for(let i = 0; i< this.newComments.length; i++){
+            this.newComments[i].status = 'read';
+          }
+           
+        });
+   
+
+}
 
    comment:BlogComments;
    
@@ -125,39 +131,57 @@ export class BlogComponent implements OnInit {
       this.getComments();
      
     })
-    // this.http.post(this.ROOT_URL, comment)
+    
     
   }
 
 
   deleteComment(id1:string){
     // this.id1 = id
-    debugger;
+    // debugger;
     this.blogService.deleteComment(id1)
     .subscribe({
       next: data => {
        console.log(data);
-       this.getComments();
+       this.showComments();
+      //  this.getComments();
       },
       error: error =>{
         console.log(error)
       }
 
     });
+
+   
     
       
-      // (error: any)=> console.log(error)
-      // ((error: any)=> console.log(error))       // console.log(response);
-        
-      // (response:any) => console.log(response),
-      // (error: any) => console.log(error),
-      // () => console.log('Done deleting user')
-      
+     
   
   
 }
 
-putComment(){
+updateComment(comment: any){
+debugger;
+  const currentDate = new Date();
+  const id1 = comment.id
+    this.comment = this.addCommentForm.value;
+    this.blogService.putComment(id1,comment).
+    subscribe((response: any)=> {
+      // console.log(response);
+      this.BlogComments.push({
+
+        content: response.content,
+        author: response.author,
+        dateTime: currentDate.toDateString() + ' at ' + currentDate.getHours() + ':' + currentDate.getMinutes() + ':' + currentDate.getSeconds(),
+        status: 'read'
+
+      })
+      
+
+      this.getComments();
+     
+    })
+
   
 }
 

@@ -13,6 +13,7 @@ export class BlogService {
 
   getComments(): Observable<BlogComments[]> {
     return this.http.get<BlogComments[]>(`https://626fc2eff7d739495bdbd882.mockapi.io/api/comments/blog_comments`);
+    // this.blogComments.pipe(map(x => console.log(x)));
   }
 
  
@@ -21,11 +22,11 @@ export class BlogService {
     return this.http.post<BlogComments>(`https://626fc2eff7d739495bdbd882.mockapi.io/api/comments/blog_comments`, comment)
   }
 
-  public deleteComment(id1: string):Observable<any>{debugger;
+  public deleteComment(id1: string):Observable<any>{
     return this.http.delete<string>(`https://626fc2eff7d739495bdbd882.mockapi.io/api/comments/blog_comments/${id1}`)
   }
 
-  public putComment(id1: string, comment:BlogComments):Observable<BlogComments>{
+  public putComment(id1: string, comment:BlogComments):Observable<BlogComments>{debugger;
     return this.http.put<BlogComments>(`https://626fc2eff7d739495bdbd882.mockapi.io/api/comments/blog_comments/${id1}`, comment)
   }
 

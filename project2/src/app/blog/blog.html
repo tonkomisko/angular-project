@@ -53,25 +53,8 @@
             </p>
         </div>
 
-<!-- maybe change the textarea to input if it doesn't work -->
 
         <div class="comment-form">
-            <!-- <form > -->
-            
-            <!-- <textarea name = "inputComment" [(ngModel)] = "inputComment" placeholder = "Your comment here..." name="" id="inputComment" cols="20" rows="5"></textarea> -->
-                <!-- <input type="text" [(ngModel)]="inputComment" id="inputComment" placeholder="Your comment here..."
-                    name="inputComment">
-              
-                <br>
-                <br>
-            
-                <button class="btn-primary" 
-                (click)="postComment()"
-                >
-                    Add a comment
-                </button>
-            
-            </form> -->
 
 
            
@@ -89,60 +72,24 @@
                     Add Comment
                   </button>
                 </form>
-              
-
-
-
-
+     
 
         </div>
-
-     
-<!-- 
-        <div  class="comments">
-                <ul class="comments_list">
-                    <li *ngFor="let comment of commentsData; index as i">
-                            <header>Comment number {{comment.id}} added by {{comment.author}} On: {{comment.dateTime}} </header>  
-                        <article *ngIf = "comment.status === 'read'">
-                              {{comment.content}}
-                        </article>
-                        <input *ngIf = "comment.status === 'edit'" type="text" [(ngModel)] = "comment.content" (ngModelChange) = "changeComment($event)"> 
-                          <button type="button" class="btn btn-danger" (click)= "deleteComment(i)">Delete comment</button> 
-                          <button type="button" class="btn btn-primary" (click)="updateComment(i)">Update comment</button> 
-                          <button type="button" class="btn btn-dark" (click)= "switchStatus(comment)">Switch status</button>
-                          -->
-                          <!-- <input type="text" [(ngModel)]="comment" id="commentData" placeholder="Your comment here..."
-                              <input type="text" [(ngModel)]="comment" id="commentData" placeholder="Your comment here..."
-                            name="dataComment"> -->
-                        <!-- <footer></footer> -->
-                    <!-- </li> -->
-
-                    
-
-                    
-
-                    <!-- pole sa prida novy objedkt a ten prvok obsahuje content + status, v cykle vyrenderovat inputy, vedla toho buttony, update savne
-                    two way binding 
-                switch pri edit 2.krok - ngif ak status je editable zobrazi input, else zobrazi span-->
-                <!-- </ul>
-        </div> -->
 
         <div class="comments">
             
             <button type="button" class="btn btn-dark" (click)= "getComments()">Get all Comments</button>
             
             <ul class="comments_list">
-                <li *ngFor="let comment of blogComments | async; index as i">
+                <li *ngFor="let comment of newComments; index as i">
                     <header>Comment number {{comment.id}} added by <strong>{{comment.author}} </strong>On: {{comment.dateTime}} </header>  
                 <article *ngIf = "comment.status === 'read'">
                       {{comment.content}}
                 </article>
-                <article >
-                    {{comment.content}}
-              </article>
+
                 <input *ngIf = "comment.status === 'edit'" type="text" [(ngModel)] = "comment.content" (ngModelChange) = "changeComment($event)"> 
                           <button type="button" class="btn btn-danger" (click)= "deleteComment(comment.id)">Delete comment</button> 
-                          <button type="button" class="btn btn-primary" (click)="putComment(comment)">Update comment</button> 
+                          <button type="button" class="btn btn-primary" (click)="updateComment(comment)">Update comment</button> 
                           <button type="button" class="btn btn-dark" (click)= "switchStatus(comment)">Switch status</button>
                          
                 </li>
