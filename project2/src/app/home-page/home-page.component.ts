@@ -1,31 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home-page',
-  template: `
-  <div class = "home-page2">
-    <h3 class = "home"> This is the PROJECT 2's HOME sweet HOME page </h3>  
-    <p class = "home">
-    
-    <p> HELLO and WECLOME :) 
-    </p>
-
-    <p>
-    Cupcake liquorice danish jelly beans sesame snaps sugar plum muffin macaroon marzipan.
-    Pastry jelly-o jujubes carrot cake sugar plum I love tiramisu candy. 
-    Danish chocolate bar chocolate cake I love jelly beans.
-    </p>
-    <p>
-
-    Biscuit toffee sugar plum wafer caramels marzipan biscuit marshmallow. Dessert candy canes muffin gummi bears apple pie chupa chups pudding soufflé. 
-    Chocolate bar sweet gummies ice cream ice cream chocolate cake. Bear claw pudding cotton candy dessert marzipan fruitcake dragée cheesecake.
-    Caramels candy sweet toffee toffee. Cupcake pastry dragée cookie brownie. Jujubes cheesecake icing I love fruitcake wafer gummi bears. 
-    Cupcake liquorice danish jelly beans sesame snaps sugar plum muffin macaroon marzipan.
-    Pastry jelly-o jujubes carrot cake sugar plum I love tiramisu candy. 
-    Danish chocolate bar chocolate cake I love jelly beans. Carrot cake I love toffee bear claw topping tart dessert candy lollipop.
-    </p>
-  </div>
-  `,
+  templateUrl: 'home-page.html',
   styles: [
     `
     .home-page2 {
@@ -34,14 +13,63 @@ import { Component, OnInit } from '@angular/core';
       padding: 2rem;
     }
 
+    .success {
+      display: block;
+      background-color: green
+    }
+
+    .danger {
+      display: none;
+    }
+
     `
   ]
 })
 export class HomePageComponent implements OnInit {
+  loginName: string = '';
+  loginPassword: string = '';
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
   }
+  status:boolean = true;
 
+  showHideHome(){
+    this.status = !this.status;
+  }
+
+  
+  getUsers(){
+    debugger;
+    const url = `http://localhost:3000/users?user=${this.loginName}&password=${this.loginPassword}`
+    return this.http.get<any>(url);
+  }
+
+
+  users: any;
+
+  showUsers(){
+    // debugger;
+    this.getUsers().subscribe((data: any) =>  {
+      debugger;
+      this.users = data;
+      console.log(data);
+      console.log("users" + this.users);
+      
+
+  })
 }
+}
+
+
+
+  
+  // redirectToPage() {
+  //   this.isShown = ! this.isShown;
+  //   console.log("clicked me")
+    
+  // }
+
+
+

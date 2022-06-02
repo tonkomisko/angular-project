@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
 import { DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { LogoutBtnComponent } from './logout-btn/logout-btn.component';
 // import { Comment} from './blog/blog.component';
 // import { RecordsTable } from './records/records.component';
 @NgModule({
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     // RecordsTable,
     ContactComponent,
     BlogComponent,
+    LogoutBtnComponent
     // Comment
 
   ],

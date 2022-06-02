@@ -3,13 +3,13 @@ const ctx  = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight/2;
 
-let gradient = ctx.createLinearGradient(0, 0, canvas.height, canvas.width)
-gradient.addColorStop(0, 'red');
-gradient.addColorStop(0.2, 'yellow');
-gradient.addColorStop(0.4, 'green');
-gradient.addColorStop(0.6, 'cyan');
-gradient.addColorStop(0.8, 'blue');
-gradient.addColorStop(1, 'magenta');
+// let gradient = ctx.createLinearGradient(0, 0, canvas.height, canvas.width)
+// gradient.addColorStop(0, 'red');
+// gradient.addColorStop(0.2, 'yellow');
+// gradient.addColorStop(0.4, 'green');
+// gradient.addColorStop(0.6, 'cyan');
+// gradient.addColorStop(0.8, 'blue');
+// gradient.addColorStop(1, 'magenta');
 
 
 // create 2 classes to handle different aspects
@@ -17,8 +17,8 @@ gradient.addColorStop(1, 'magenta');
 
 class Symbol {
     constructor(x,y,fontSize,canvasHeight) {
-        this.charcaters = 
-        'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ♔♕♖♗♘♙♚♛♜♝♞♟☀☁❆❅❄♪♫';
+        this.charcaters = '♥'
+        // 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ♔♕♖♗♘♙♚♛♜♝♞♟☀☁❆❅❄♪♫';
         this.x = x;
         this.y = y;
         this.fontSize = fontSize;
@@ -84,7 +84,7 @@ function animate(timeStamp){
         ctx.fillStyle = 'rgba(0,0,0, 0.05)';
         ctx.textAlign = 'center';     
         ctx.fillRect(0,0, canvas.width, canvas.height);
-        ctx.fillStyle =  gradient; //'#0aff0a';
+        ctx.fillStyle = '#ff5cdc';
         ctx.font = effect.fontSize + 'px monospace';
         effect.symbols.forEach(symbol => symbol.draw(ctx));
         timer = 0;

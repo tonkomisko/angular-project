@@ -127,8 +127,9 @@ showComments(){
 
       })
       
+      
 
-      this.getComments();
+      this.showComments();
      
     })
     
