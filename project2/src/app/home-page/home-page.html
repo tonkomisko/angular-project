@@ -1,0 +1,49 @@
+
+
+<app-logout-btn></app-logout-btn>
+ 
+ <div  class = "home-page2">
+    <h3 class = "home"> This is the PROJECT 2's HOME sweet HOME page </h3>  
+    <p class = "home">
+    
+      <div class="tab-content">
+        <!-- <form action=""> -->
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="loginName" class="form-control" [(ngModel)]="loginName" />
+            <label class="form-label" for="loginName">Username</label>
+          </div>
+      
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" id="loginPassword" class="form-control" [(ngModel)]="loginPassword"/>
+            <label class="form-label" for="loginPassword">Password</label>
+          </div>
+        <!-- </form> -->
+      </div>
+    
+
+      <button (click)="showUsers()">Get Users</button>
+    
+    <div class="login_home" (click)="showHideHome()" [ngClass] = "status ? 'success' : 'danger'">
+      <p> HELLO and WECLOME :) 
+      </p>
+  
+      <p>
+      Cupcake liquorice danish jelly beans sesame snaps sugar plum muffin macaroon marzipan.
+      Pastry jelly-o jujubes carrot cake sugar plum I love tiramisu candy. 
+      Danish chocolate bar chocolate cake I love jelly beans.
+      </p>
+      <p>
+  
+      Biscuit toffee sugar plum wafer caramels marzipan biscuit marshmallow. Dessert candy canes muffin gummi bears apple pie chupa chups pudding soufflé. 
+      Chocolate bar sweet gummies ice cream ice cream chocolate cake. Bear claw pudding cotton candy dessert marzipan fruitcake dragée cheesecake.
+      Caramels candy sweet toffee toffee. Cupcake pastry dragée cookie brownie. Jujubes cheesecake icing I love fruitcake wafer gummi bears. 
+      Cupcake liquorice danish jelly beans sesame snaps sugar plum muffin macaroon marzipan.
+      Pastry jelly-o jujubes carrot cake sugar plum I love tiramisu candy. 
+      Danish chocolate bar chocolate cake I love jelly beans. Carrot cake I love toffee bear claw topping tart dessert candy lollipop.
+      </p>
+    </div>
+   
+  </div>
+

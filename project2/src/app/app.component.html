@@ -11,7 +11,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo -->
     
-  <div  *ngIf="loggedIn === false" > 
+  <div  *ngIf="!isLoggedIn_parent" > 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <!-- Brand/logo -->
       <a class="navbar-brand" href="/home">Project 2</a>
@@ -23,7 +23,7 @@
     </nav>
   </div>
    
-   <div  *ngIf="loggedIn === true" > 
+   <div  *ngIf="isLoggedIn_parent" > 
     
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <!-- Brand/logo -->

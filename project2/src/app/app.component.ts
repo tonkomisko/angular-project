@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from './service/data.service';
 
 
 @Component({
@@ -9,7 +11,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'project2';
   
-  loggedIn = true;
+  isLoggedIn_parent: boolean = false;
+
+  constructor(private ds: DataService, private router: Router){
+    this.ds.getData().subscribe(x => { 
+      debugger;
+      this.isLoggedIn_parent = x; 
+      
+      router.navigate(['/aboutus']);
+    });
+  }
 }
 
 

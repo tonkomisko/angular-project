@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { Output, EventEmitter } from '@angular/core';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-home-page',
@@ -26,10 +28,12 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class HomePageComponent implements OnInit {
+  // @Output() newItemEvent = new EventEmitter<boolean>();
   loginName: string = '';
   loginPassword: string = '';
+  isLoggedIn_child: boolean = false;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private ds: DataService ) { }
 
   ngOnInit(): void {
   }
@@ -44,6 +48,8 @@ export class HomePageComponent implements OnInit {
     debugger;
     const url = `http://localhost:3000/users?user=${this.loginName}&password=${this.loginPassword}`
     return this.http.get<any>(url);
+      // .map(res =>res.json())
+
   }
 
 
@@ -56,6 +62,14 @@ export class HomePageComponent implements OnInit {
       this.users = data;
       console.log(data);
       console.log("users" + this.users);
+      if (data.length > 0){
+        this.isLoggedIn_child = true
+      }else {
+        this.isLoggedIn_child = false
+      }
+      // this.newItemEvent.emit(this.isLoggedIn_child);
+      
+        this.ds.sendData(this.isLoggedIn_child);
       
 
   })
