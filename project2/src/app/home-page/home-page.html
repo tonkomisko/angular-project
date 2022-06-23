@@ -1,6 +1,6 @@
 
 
-<app-logout-btn></app-logout-btn>
+<!-- <app-logout-btn></app-logout-btn> -->
  
  <div  class = "home-page2">
     <h3 class = "home"> This is the PROJECT 2's HOME sweet HOME page </h3>  
@@ -23,8 +23,9 @@
       </div>
     
 
-      <button (click)="showUsers()">Get Users</button>
-    
+      
+      <app-login-btn [itemLoginName]="loginName" [itemLoginPassword]="loginPassword" ></app-login-btn>
+
     <div class="login_home" (click)="showHideHome()" [ngClass] = "status ? 'success' : 'danger'">
       <p> HELLO and WECLOME :) 
       </p>

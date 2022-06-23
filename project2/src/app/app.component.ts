@@ -18,7 +18,13 @@ export class AppComponent {
       debugger;
       this.isLoggedIn_parent = x; 
       
-      router.navigate(['/aboutus']);
+      if (this.isLoggedIn_parent)
+      {
+        router.navigate(['/aboutus']);
+      } else {
+        router.navigate(['/home'])
+      }
+      
     });
   }
 }

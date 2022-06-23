@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DataService } from '../service/data.service'
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-logout-btn',
   templateUrl: './logout-btn.component.html',
@@ -7,17 +8,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutBtnComponent implements OnInit {
 
-  constructor() { }
+  loginName: string = '';
+  loginPassword: string = '';
+  isLoggedIn_child: boolean = false;
+
+  constructor(private http:HttpClient, private ds: DataService ) { }
 
   ngOnInit(): void {
   }
+  status:boolean = true;
 
-  // isShown:boolean = false;
-
-  redirectToPage() {
-    // this.isShown = !this.isShown;
-    console.log("clicked")
-    
+  showHideHome(){
+    this.status = !this.status;
   }
 
+  
+  getUsers(){
+    debugger;
+    const url = `http://localhost:3000/users?user=${this.loginName}&password=${this.loginPassword}`
+    return this.http.get<any>(url);
+      // .map(res =>res.json())
+
+  }
+
+
+  users: any;
+
+  loginUser(){
+    // debugger;
+    this.getUsers().subscribe((data: any) =>  {
+      debugger;
+      // this.users = data;
+      // console.log(data);
+      // console.log("users" + this.users);
+      // if (data.length > 0){
+      //   this.isLoggedIn_child = true
+      // }else {
+        this.isLoggedIn_child = false
+      // }
+      // this.newItemEvent.emit(this.isLoggedIn_child);
+      
+        this.ds.sendData(this.isLoggedIn_child);
+      
+
+  })
+}
 }

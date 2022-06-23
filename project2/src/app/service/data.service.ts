@@ -9,7 +9,7 @@ export class DataService {
     private subject = new Subject<any>();
  
     sendData(message: any) {
-        this.subject.next(message);
+    debugger;    this.subject.next(message);
     }
  
     

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Output, EventEmitter } from '@angular/core';
@@ -28,6 +28,8 @@ import { DataService } from '../service/data.service';
   ]
 })
 export class HomePageComponent implements OnInit {
+  // @Input() itemLoginName = '';
+  // @Input() itemLoginPassword = '';
   // @Output() newItemEvent = new EventEmitter<boolean>();
   loginName: string = '';
   loginPassword: string = '';
@@ -55,7 +57,7 @@ export class HomePageComponent implements OnInit {
 
   users: any;
 
-  showUsers(){
+  loginUser(){
     // debugger;
     this.getUsers().subscribe((data: any) =>  {
       debugger;
