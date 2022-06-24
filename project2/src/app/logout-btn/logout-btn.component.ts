@@ -34,19 +34,13 @@ export class LogoutBtnComponent implements OnInit {
 
   users: any;
 
-  loginUser(){
+  logoutUser(){
     // debugger;
     this.getUsers().subscribe((data: any) =>  {
       debugger;
-      // this.users = data;
-      // console.log(data);
-      // console.log("users" + this.users);
-      // if (data.length > 0){
-      //   this.isLoggedIn_child = true
-      // }else {
+    
         this.isLoggedIn_child = false
-      // }
-      // this.newItemEvent.emit(this.isLoggedIn_child);
+     
       
         this.ds.sendData(this.isLoggedIn_child);
       
