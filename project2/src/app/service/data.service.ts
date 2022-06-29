@@ -15,6 +15,7 @@ export class DataService {
     
  
     getData(): Observable<any> {
+        debugger;
         return this.subject.asObservable();
     }
 }
