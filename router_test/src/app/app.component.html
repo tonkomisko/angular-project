@@ -1,18 +1,36 @@
-<h1>Angular ngx-bootstrap example</h1>
- 
-<div class="btn-group" dropdown>
-  <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-          aria-controls="dropdown-basic">
-    Button dropdown <span class="caret"></span>
-  </button>
-  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-      role="menu" aria-labelledby="button-basic">
-    <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-    <li class="divider dropdown-divider"></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
-    </li>
-  </ul>
-</div>
- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Angular ROUTING project 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./app.component.css" rel="stylesheet">
+  </head>
+  <body>
+  
+
+    <h1>Angular ROUTING And Navigation</h1>
+
+
+
+      <nav>
+        <ul class="container">
+          <li><a routerLink = "/home" routerLinkActive = "active">Home</a></li>
+          <li ><a routerLink = "/about" routerLinkActive = "active">About </a> </li>
+          <li><a routerLink = "/contact" routerLinkActive = "active">Contact</a></li>
+        </ul><!-- .container -->
+      </nav>
+
+
+    <!-- <nav>
+      <a routerLink = "/departments" routerLinkActive = "active"> Departments</a>
+      <a routerLink = "/employees" routerLinkActive = "active"> Employees</a>
+    
+    
+    </nav> -->
+    
+    <router-outlet></router-outlet>
+
+
+  </body>
+</html>
